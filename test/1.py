@@ -38,8 +38,10 @@ items = ratings_matrix.loc[:,[1,2]]
 b = items[1] !=0
 c = items[2] !=0
 d = [all(i) for i in zip(b,c)]
-e = [ i for i in d if i]
-print(len(e))
+
+e = items[b&c].index.tolist()
+f = items.loc[e,:]
+print(f)
 #计算相似度
 
 
